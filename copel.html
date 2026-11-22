@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Chamado de falta de energia · COPEL · Unavia</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500;600&display=swap');
+:root{
+  --un-azul:#185FA5; --un-azul-claro:#2E7CC4; --un-grafite:#1C2026; --un-grafite-2:#14181F;
+  --un-verde:#1D9E75; --un-ambar:#EF9F27; --un-offwhite:#F1EFE8; --un-aco:#8893A2;
+  --un-font-display:'Space Grotesk',-apple-system,Segoe UI,Roboto,sans-serif;
+  --un-font-text:'Inter',-apple-system,Segoe UI,Roboto,sans-serif;
+  --un-radius:14px; --un-radius-sm:9px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--un-grafite-2);color:var(--un-offwhite);font-family:var(--un-font-text);
+  line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:460px;margin:0 auto;padding:22px 18px 40px}
+.topo{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.topo svg{width:34px;height:34px}
+.topo span{font-family:var(--un-font-display);font-weight:600;letter-spacing:-.04em;font-size:18px}
+.topo small{display:block;font-family:var(--un-font-text);font-weight:400;letter-spacing:0;font-size:12px;color:var(--un-aco)}
+h1{font-family:var(--un-font-display);font-weight:600;letter-spacing:-.02em;font-size:25px;line-height:1.15;margin:0 0 6px}
+.sub{color:var(--un-aco);margin:0 0 16px;font-size:15px}
+.uc{display:flex;align-items:center;gap:10px;background:var(--un-grafite);border:1px solid #2A303A;border-radius:var(--un-radius-sm);
+  padding:10px 12px;margin-bottom:14px}
+.uc label{font-size:13px;color:var(--un-aco);white-space:nowrap}
+.uc input{flex:1;min-width:0;background:transparent;border:0;color:var(--un-offwhite);font:600 20px var(--un-font-text);
+  font-feature-settings:'tnum';letter-spacing:.04em;outline:none}
+.aviso{background:rgba(239,159,39,.12);border-left:4px solid var(--un-ambar);border-radius:var(--un-radius-sm);
+  padding:11px 13px;font-size:14.5px;margin-bottom:18px}
+.aviso b{color:var(--un-ambar)}
+a.btn{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--un-offwhite);background:var(--un-grafite);
+  border:1px solid #2A303A;border-radius:var(--un-radius);padding:16px 16px;margin-bottom:12px}
+a.btn.principal{background:var(--un-azul);border-color:var(--un-azul-claro)}
+a.btn .ic{font-size:28px;line-height:1;flex:none;width:34px;text-align:center}
+a.btn b{display:block;font-family:var(--un-font-display);font-weight:600;font-size:18px;letter-spacing:-.01em}
+a.btn small{display:block;font-size:13.5px;color:#C9D4E3}
+a.btn:not(.principal) small{color:var(--un-aco)}
+a.btn.off{opacity:.4;pointer-events:none}
+.rodape{margin-top:18px;font-size:12.5px;color:var(--un-aco)}
+.rodape b{color:var(--un-offwhite);font-weight:500}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topo">
+    <svg viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2E7CC4"/><stop offset="1" stop-color="#1D9E75"/></linearGradient></defs>
+      <path d="M30 26 V52 Q30 76 50 76 Q70 76 70 52 V26" fill="none" stroke="url(#g)" stroke-width="9" stroke-linecap="round"/>
+      <circle cx="70" cy="21" r="6" fill="#EF9F27"/></svg>
+    <span>UNAVIA<small>Monitor de energia</small></span>
+  </div>
+
+  <h1>Chamado de falta de energia na COPEL</h1>
+  <p class="sub">Escolha um canal. O SMS é o mais rápido: já vai escrito.</p>
+
+  <div class="uc">
+    <label for="uc">Unidade (UC)</label>
+    <input id="uc" inputmode="numeric" autocomplete="off" placeholder="número da conta de luz">
+  </div>
+
+  <div class="aviso"><b>Antes:</b> o disjuntor geral está ligado? Se o defeito for interno, a COPEL <b>cobra a visita</b>.</div>
+
+  <a class="btn principal" id="sms" href="#">
+    <span class="ic">📩</span>
+    <span><b>Mandar SMS para a COPEL</b><small id="smsTxt">Abre o SMS pronto. Toque em Enviar.</small></span>
+  </a>
+  <a class="btn" id="wa" href="#" target="_blank" rel="noopener">
+    <span class="ic">💬</span>
+    <span><b>WhatsApp da COPEL</b><small>(41) 3013-8973 · atendimento automático</small></span>
+  </a>
+  <a class="btn" href="tel:08005100116">
+    <span class="ic">📞</span>
+    <span><b>Ligar 0800 51 00 116</b><small>Atendimento 24 h, ligação grátis</small></span>
+  </a>
+
+  <p class="rodape">A COPEL responde com o <b>número do protocolo</b>. Esta página não guarda nem envia nenhum dado:
+    o número da unidade fica só no seu celular.</p>
+</div>
+<script>
+(function () {
+  var params = new URLSearchParams(location.hash.slice(1));
+  var campo = document.getElementById('uc');
+  campo.value = (params.get('uc') || '').replace(/\D/g, '');
+  var ios = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  function atualizar() {
+    var uc = campo.value.replace(/\D/g, '');
+    var sms = document.getElementById('sms'), wa = document.getElementById('wa');
+    if (!uc) {
+      sms.classList.add('off'); wa.classList.add('off');
+      document.getElementById('smsTxt').textContent = 'Digite o número da unidade acima.';
+      return;
+    }
+    sms.classList.remove('off'); wa.classList.remove('off');
+    var corpo = 'SL ' + uc;
+    sms.href = 'sms:28593' + (ios ? '&' : '?') + 'body=' + encodeURIComponent(corpo);
+    document.getElementById('smsTxt').textContent = 'Abre o SMS pronto: "' + corpo + '" para 28593. Toque em Enviar.';
+    wa.href = 'https://wa.me/554130138973?text=' + encodeURIComponent('Falta de energia na unidade consumidora ' + uc);
+  }
+  campo.addEventListener('input', atualizar);
+  atualizar();
+})();
+</script>
+</body>
+</html>
